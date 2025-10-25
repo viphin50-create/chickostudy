@@ -104,6 +104,112 @@
                 
                 <p class="mb-6 text-gray-600 text-center max-w-xl mx-auto">ЧИКО - это сеть ресторанов, где корейская культура встречается с современным сервисом и уважительным отношением к каждому гостю.</p>
                 
+                <div class="grid md:grid-cols-3 gap-6 mt-6 text-center"><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивное пособие ЧИКО</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- ЦВЕТОВАЯ ПАЛИТРА И ТИПОГРАФИКА --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --color-primary: #7C3AED;    /* Глубокий Индиго / Фиолетовый (для заголовков) */
+            --color-accent: #F472B6;     /* Мягкий Розовый (акцент, девиз) */
+            --color-bg-soft: #F9FAFB;    /* Очень светлый фон */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-soft); 
+            color: #333;
+        }
+
+        /* Заголовки останутся читабельными, но менее "кричащими" */
+        h1, h2, h3 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600; /* Используем Semibold для всех основных заголовков */
+        }
+
+        /* Навигация: стили для активной вкладки */
+        .tab-button.active {
+            border-color: var(--color-primary); 
+            color: var(--color-primary);
+            background-color: #F0F5FF;
+            font-weight: 600; /* Средний вес для активной вкладки */
+        }
+        
+        .tab-button {
+            transition: all 0.2s ease-in-out;
+            font-weight: 500; /* Medium weight для неактивных вкладок */
+        }
+
+        .tab-button:not(.active):hover {
+            color: var(--color-accent);
+        }
+
+        /* Облачка для советов и философии с мягкими тенями */
+        .bubble-tip {
+            background-color: #FFFBEB; 
+            border: 1px solid #FBBF24; 
+            box-shadow: 0 4px 6px rgba(251, 191, 36, 0.1); 
+        }
+
+        .bubble-philosophy {
+            background-color: #F3E8FF; 
+            border: 1px solid #A855F7; 
+            box-shadow: 0 4px 6px rgba(168, 85, 247, 0.15); 
+        }
+        
+        /* Стиль для блока Запретов/Обязательств */
+        .forbidden-list {
+            background-color: #FEF2F2; 
+            border-left: 6px solid #EF4444; 
+            border-radius: 0.75rem;
+        }
+        .mandatory-list {
+            background-color: #ECFDF5; 
+            border-left: 6px solid #10B981; 
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Секция 1: Введение и Философия -->
+    <section id="philosophy" class="pt-12 pb-16 bg-white shadow-inner">
+        <div class="container mx-auto max-w-4xl px-4">
+            
+            <h1 class="text-5xl font-semibold text-center mb-4" style="color: var(--color-primary);">
+                <span class="inline-block transform -rotate-6 text-yellow-500 mr-2 text-6xl">⭐</span> Учебное пособие ЧИКО
+            </h1>
+            <!-- ИЗМЕНЕНИЕ ЗДЕСЬ: УДАЛЕНЫ КАВЫЧКИ ВОКРУГ "СЕРВИСУ С ВОСТОЧНОЙ ДУШОЙ" -->
+            <p class="text-center text-gray-500 text-lg mb-10">Твоя карта к Сервису с восточной душой</p>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b pb-2">Привет, сотрудник ЧИКО</h2>
+                <p class="mb-4 text-gray-600 leading-relaxed">Это пособие создано для тебя — для тех, кто каждый день встречает гостей, создает атмосферу и формирует впечатление о ЧИКО.</p>
+                
+                <div class="bg-indigo-50 p-6 rounded-xl my-6 border-l-4 border-indigo-400">
+                    <p class="font-medium text-indigo-700">В ЧИКО сервис — это не просто процесс обслуживания. Это искусство видеть гостя, предугадывать его потребности и говорить с ним языком уважения и спокойствия.</p>
+                </div>
+                
+                <p class="mb-4 text-gray-600 leading-relaxed">Каждый сотрудник зала, официант, хостес, бармен, менеджер и кассир — важная часть этого искусства. Оно нацелено на то, чтобы ты чувствовал себя уверенно и профессионально.</p>
+
+                <div class="mt-8 bubble-philosophy p-6 rounded-lg shadow-lg">
+                    <h3 class="font-medium text-xl mb-2" style="color: var(--color-primary);">Твоя Философия</h3>
+                    <p class="text-purple-700">Прочитай её спокойно и с вниманием, и ты поймёшь, что ЧИКО начинается с тебя.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl mt-8 border border-gray-100">
+                <h2 class="text-4xl font-semibold text-center mb-2" style="color: var(--color-primary);">Сервис с восточной душой</h2>
+                <p class="text-xl font-medium text-center mb-8" style="color: var(--color-accent);">Девиз: Любовь - главный ингредиент</p>
+                
+                <p class="mb-6 text-gray-600 text-center max-w-xl mx-auto">ЧИКО - это сеть ресторанов, где корейская культура встречается с современным сервисом и уважительным отношением к каждому гостю.</p>
+                
                 <div class="grid md:grid-cols-3 gap-6 mt-6 text-center">
                     <!-- Тепло -->
                     <div class="p-6 rounded-xl transform hover:scale-105 transition-transform duration-300 shadow-md border border-yellow-200" style="background-color: #FFFAE9;">
