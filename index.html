@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* --- ЦВЕТОВАЯ ПАЛИТРА И ТИПОГРАФИКА --- */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Jost:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap');
         
         :root {
             --color-primary: #7C3AED;    /* Глубокий Индиго / Фиолетовый (для заголовков) */
@@ -21,8 +21,10 @@
             color: #333;
         }
 
+        /* Заголовки останутся читабельными, но менее "кричащими" */
         h1, h2, h3 {
             font-family: 'Jost', sans-serif;
+            font-weight: 600; /* Используем Semibold для всех основных заголовков */
         }
 
         /* Навигация: стили для активной вкладки */
@@ -30,11 +32,12 @@
             border-color: var(--color-primary); 
             color: var(--color-primary);
             background-color: #F0F5FF;
-            font-weight: 700;
+            font-weight: 600; /* Средний вес для активной вкладки */
         }
         
         .tab-button {
             transition: all 0.2s ease-in-out;
+            font-weight: 500; /* Medium weight для неактивных вкладок */
         }
 
         .tab-button:not(.active):hover {
@@ -45,24 +48,24 @@
         .bubble-tip {
             background-color: #FFFBEB; 
             border: 1px solid #FBBF24; 
-            box-shadow: 0 4px 6px rgba(251, 191, 36, 0.1); /* Тень в цвет акцента */
+            box-shadow: 0 4px 6px rgba(251, 191, 36, 0.1); 
         }
 
         .bubble-philosophy {
             background-color: #F3E8FF; 
             border: 1px solid #A855F7; 
-            box-shadow: 0 4px 6px rgba(168, 85, 247, 0.15); /* Тень в цвет акцента */
+            box-shadow: 0 4px 6px rgba(168, 85, 247, 0.15); 
         }
         
         /* Стиль для блока Запретов/Обязательств */
         .forbidden-list {
-            background-color: #FEF2F2; /* Очень светлый красный */
-            border-left: 6px solid #EF4444; /* Более выраженный бордер */
+            background-color: #FEF2F2; 
+            border-left: 6px solid #EF4444; 
             border-radius: 0.75rem;
         }
         .mandatory-list {
-            background-color: #ECFDF5; /* Очень светлый зеленый */
-            border-left: 6px solid #10B981; /* Более выраженный бордер */
+            background-color: #ECFDF5; 
+            border-left: 6px solid #10B981; 
             border-radius: 0.75rem;
         }
     </style>
@@ -73,30 +76,31 @@
     <section id="philosophy" class="pt-12 pb-16 bg-white shadow-inner">
         <div class="container mx-auto max-w-4xl px-4">
             
-            <h1 class="text-5xl font-extrabold text-center mb-4" style="color: var(--color-primary);">
+            <h1 class="text-5xl font-semibold text-center mb-4" style="color: var(--color-primary);">
                 <span class="inline-block transform -rotate-6 text-yellow-500 mr-2 text-6xl">⭐</span> Учебное пособие ЧИКО
             </h1>
-            <p class="text-center text-gray-500 text-lg mb-10">Твоя карта к "Сервису с восточной душой"</p>
+            <!-- ИЗМЕНЕНИЕ ЗДЕСЬ: УДАЛЕНЫ КАВЫЧКИ ВОКРУГ "СЕРВИСУ С ВОСТОЧНОЙ ДУШОЙ" -->
+            <p class="text-center text-gray-500 text-lg mb-10">Твоя карта к Сервису с восточной душой</p>
             
             <div class="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Привет, сотрудник ЧИКО</h2>
-                <p class="mb-4 text-gray-600 leading-relaxed">Это пособие создано для тебя — для тех, кто каждый день встречает гостей, создает атмосферу и формирует впечатление о ЧИКО. Оно написано не для контроля, а для **осознанности**.</p>
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b pb-2">Привет, сотрудник ЧИКО</h2>
+                <p class="mb-4 text-gray-600 leading-relaxed">Это пособие создано для тебя — для тех, кто каждый день встречает гостей, создает атмосферу и формирует впечатление о ЧИКО.</p>
                 
                 <div class="bg-indigo-50 p-6 rounded-xl my-6 border-l-4 border-indigo-400">
-                    <p class="font-semibold text-indigo-700">В ЧИКО сервис — это не просто процесс обслуживания. Это искусство **видеть гостя**, предугадывать его потребности и говорить с ним языком **уважения и спокойствия**.</p>
+                    <p class="font-medium text-indigo-700">В ЧИКО сервис — это не просто процесс обслуживания. Это искусство видеть гостя, предугадывать его потребности и говорить с ним языком уважения и спокойствия.</p>
                 </div>
                 
                 <p class="mb-4 text-gray-600 leading-relaxed">Каждый сотрудник зала, официант, хостес, бармен, менеджер и кассир — важная часть этого искусства. Оно нацелено на то, чтобы ты чувствовал себя уверенно и профессионально.</p>
 
                 <div class="mt-8 bubble-philosophy p-6 rounded-lg shadow-lg">
-                    <h3 class="font-bold text-xl mb-2" style="color: var(--color-primary);">Твоя Философия</h3>
-                    <p class="text-purple-700">Прочитай её спокойно и с вниманием, и ты поймёшь, что **ЧИКО начинается с тебя**.</p>
+                    <h3 class="font-medium text-xl mb-2" style="color: var(--color-primary);">Твоя Философия</h3>
+                    <p class="text-purple-700">Прочитай её спокойно и с вниманием, и ты поймёшь, что ЧИКО начинается с тебя.</p>
                 </div>
             </div>
 
             <div class="bg-white p-8 rounded-2xl shadow-xl mt-8 border border-gray-100">
-                <h2 class="text-4xl font-extrabold text-center mb-2" style="color: var(--color-primary);">«Сервис с восточной душой»</h2>
-                <p class="text-xl font-bold text-center mb-8" style="color: var(--color-accent);">Девиз: Любовь - главный ингредиент</p>
+                <h2 class="text-4xl font-semibold text-center mb-2" style="color: var(--color-primary);">Сервис с восточной душой</h2>
+                <p class="text-xl font-medium text-center mb-8" style="color: var(--color-accent);">Девиз: Любовь - главный ингредиент</p>
                 
                 <p class="mb-6 text-gray-600 text-center max-w-xl mx-auto">ЧИКО - это сеть ресторанов, где корейская культура встречается с современным сервисом и уважительным отношением к каждому гостю.</p>
                 
@@ -104,19 +108,19 @@
                     <!-- Тепло -->
                     <div class="p-6 rounded-xl transform hover:scale-105 transition-transform duration-300 shadow-md border border-yellow-200" style="background-color: #FFFAE9;">
                         <span class="text-4xl">☀️</span>
-                        <h3 class="font-bold text-xl mt-3 text-yellow-700">Тепло</h3>
+                        <h3 class="font-medium text-xl mt-3 text-yellow-700">Тепло</h3>
                         <p class="text-sm text-gray-600 mt-1">Не просто накормить, а согреть. Гость должен почувствовать заботу.</p>
                     </div>
                     <!-- Вкус -->
                     <div class="p-6 rounded-xl transform hover:scale-105 transition-transform duration-300 shadow-md border border-pink-200" style="background-color: #FFF0F6;">
                         <span class="text-4xl">🍜</span>
-                        <h3 class="font-bold text-xl mt-3" style="color: var(--color-accent);">Вкус</h3>
+                        <h3 class="font-medium text-xl mt-3" style="color: var(--color-accent);">Вкус</h3>
                         <p class="text-sm text-gray-600 mt-1">Каждое блюдо — это наша гордость, приготовленная с любовью.</p>
                     </div>
                     <!-- Доверие -->
                     <div class="p-6 rounded-xl transform hover:scale-105 transition-transform duration-300 shadow-md border border-indigo-200" style="background-color: #EFF6FF;">
                         <span class="text-4xl">🤝</span>
-                        <h3 class="font-bold text-xl mt-3 text-indigo-700">Доверие</h3>
+                        <h3 class="font-medium text-xl mt-3 text-indigo-700">Доверие</h3>
                         <p class="text-sm text-gray-600 mt-1">Создаем среду, где гость может расслабиться и знать, что о нём позаботятся.</p>
                     </div>
                 </div>
@@ -128,68 +132,68 @@
     <!-- Секция 2: Ценности -->
     <section id="values" class="py-16" style="background-color: #F7F5FF;">
         <div class="container mx-auto max-w-5xl px-4">
-            <h2 class="text-4xl font-extrabold text-center mb-10" style="color: var(--color-primary);">Наши 10 Ценностей</h2>
+            <h2 class="text-4xl font-semibold text-center mb-10" style="color: var(--color-primary);">Наши 10 Ценностей</h2>
 
             <!-- Сетка ценностей -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- 1. Любовь -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-pink-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center" style="color: var(--color-accent);"><span class="text-3xl mr-3">❤️</span> 1. Любовь</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center" style="color: var(--color-accent);"><span class="text-3xl mr-3">❤️</span> 1. Любовь</h3>
                     <p class="text-gray-600 text-sm">Все, что мы делаем, пропитано искренней заботой о госте. Если нет любви - нет ЧИКО.</p>
                 </div>
 
                 <!-- 2. Искусство видеть -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-blue-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-blue-600"><span class="text-3xl mr-3">👁️</span> 2. Искусство видеть</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-blue-600"><span class="text-3xl mr-3">👁️</span> 2. Искусство видеть</h3>
                     <p class="text-gray-600 text-sm">Предугадывание потребностей. Готовность прийти на помощь прежде, чем о ней попросят.</p>
                 </div>
 
                 <!-- 3. Спокойствие -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-purple-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-purple-600"><span class="text-3xl mr-3">🧘</span> 3. Спокойствие</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-purple-600"><span class="text-3xl mr-3">🧘</span> 3. Спокойствие</h3>
                     <p class="text-gray-600 text-sm">Никакой суеты. Уважение в общении, движениях и голосе.</p>
                 </div>
 
                 <!-- 4. Чистота -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-green-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-green-600"><span class="text-3xl mr-3">✨</span> 4. Чистота</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-green-600"><span class="text-3xl mr-3">✨</span> 4. Чистота</h3>
                     <p class="text-gray-600 text-sm">Идеальный порядок: чистая форма, порядок в голове, чистые мысли и честные отношения.</p>
                 </div>
 
                 <!-- 5. Профессионализм -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-gray-200">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-gray-700"><span class="text-3xl mr-3">🎓</span> 5. Профессионализм</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-gray-700"><span class="text-3xl mr-3">🎓</span> 5. Профессионализм</h3>
                     <p class="text-gray-600 text-sm">Знание меню, регламентов, этикета и уверенность в своих действиях.</p>
                 </div>
                 
                 <!-- 6. Гибкость -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-cyan-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-cyan-600"><span class="text-3xl mr-3">🌊</span> 6. Гибкость</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-cyan-600"><span class="text-3xl mr-3">🌊</span> 6. Гибкость</h3>
                     <p class="text-gray-600 text-sm">Умение подстроиться под ситуацию и сохранять спокойствие при форс-мажоре.</p>
                 </div>
 
                 <!-- 7. Сила команды -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-orange-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-orange-600"><span class="text-3xl mr-3">🤝</span> 7. Сила команды</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-orange-600"><span class="text-3xl mr-3">🤝</span> 7. Сила команды</h3>
                     <p class="text-gray-600 text-sm">Единый организм. Поддержка, помощь, уважение. Негативные эмоции оставляем за дверью.</p>
                 </div>
 
                 <!-- 8. Развитие -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-indigo-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-indigo-600"><span class="text-3xl mr-3">💡</span> 8. Развитие</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-indigo-600"><span class="text-3xl mr-3">💡</span> 8. Развитие</h3>
                     <p class="text-gray-600 text-sm">Постоянный рост. Желание учиться и делиться знаниями.</p>
                 </div>
 
                 <!-- 9. Искренность -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-rose-100">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-rose-600"><span class="text-3xl mr-3">😊</span> 9. Искренность</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-rose-600"><span class="text-3xl mr-3">😊</span> 9. Искренность</h3>
                     <p class="text-gray-600 text-sm">Наша улыбка — не маска. Мы честны с гостями и друг с другом.</p>
                 </div>
 
                 <!-- 10. Ответственность -->
                 <div class="bg-white p-5 rounded-xl shadow-lg border border-gray-300">
-                    <h3 class="font-bold text-xl mb-2 flex items-center text-gray-800"><span class="text-3xl mr-3">🛡️</span> 10. Ответственность</h3>
+                    <h3 class="font-medium text-xl mb-2 flex items-center text-gray-800"><span class="text-3xl mr-3">🛡️</span> 10. Ответственность</h3>
                     <p class="text-gray-600 text-sm">За свои слова, действия, за атмосферу, за качество сервиса.</p>
                 </div>
             </div>
@@ -199,7 +203,7 @@
     <!-- Секция 3: Этапы Обслуживания (Стр. 5-10, Полный цикл) -->
     <section id="stages" class="py-20 bg-white">
         <div class="container mx-auto max-w-4xl px-4">
-            <h2 class="text-4xl font-extrabold text-center mb-10" style="color: var(--color-primary);">Пошаговый Сервис</h2>
+            <h2 class="text-4xl font-semibold text-center mb-10" style="color: var(--color-primary);">Пошаговый Сервис</h2>
 
             <!-- Интерактивные вкладки для этапов (Улучшенный стиль) -->
             <div class="flex justify-center border-b-2 border-gray-200 mb-8 space-x-2 sm:space-x-4 overflow-x-auto bg-gray-50 rounded-t-lg p-2 shadow-inner">
@@ -214,18 +218,18 @@
                 
                 <!-- Вкладка 1: Встреча -->
                 <div id="tab-content-meet" class="tab-content">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">1. Встреча <span class="text-purple-500">| Первое впечатление</span></h3>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">1. Встреча <span class="text-purple-500">| Первое впечатление</span></h3>
                     <p class="text-gray-600 mb-6">Это момент, когда гость принимает решение о своем настроении. Наша задача - сразу создать ощущение тепла и гостеприимства.</p>
                     
-                    <h4 class="text-xl font-bold text-indigo-700 mb-3">Правило 3 и 1.5 метров (Зона ответственности)</h4>
+                    <h4 class="text-xl font-medium text-indigo-700 mb-3">Правило 3 и 1.5 метров (Зона ответственности)</h4>
                     
                     <!-- Диаграмма "Правило 3 и 1.5 метров" (Улучшенный дизайн) -->
                     <div class="my-6 p-6 bg-indigo-50 rounded-xl border border-indigo-200 shadow-inner">
                         <div class="flex items-center p-4 bg-white rounded-xl shadow-lg border-l-4 border-blue-400">
                             <span class="text-3xl mr-4">📏</span>
                             <div>
-                                <h5 class="font-bold text-lg text-blue-600">Зона 3 метров (Визуальный контакт)</h5>
-                                <p class="text-sm text-gray-600">Поймай взгляд. **Действие:** Улыбка и кивок. Невербальное "Добро пожаловать!".</p>
+                                <h5 class="font-medium text-lg text-blue-600">Зона 3 метров (Визуальный контакт)</h5>
+                                <p class="text-sm text-gray-600">Поймай взгляд. Действие: Улыбка и кивок. Невербальное "Добро пожаловать!".</p>
                             </div>
                         </div>
                         <div class="flex justify-center my-4">
@@ -234,75 +238,75 @@
                         <div class="flex items-center p-4 bg-white rounded-xl shadow-lg border-l-4 border-purple-400">
                             <span class="text-3xl mr-4">🗣️</span>
                             <div>
-                                <h5 class="font-bold text-lg text-purple-600">Зона 1.5 метров (Вербальный контакт)</h5>
-                                <p class="text-sm text-gray-600">Гость входит в зону речи. **Действие:** Вербальное приветствие (с легким поклоном).</p>
+                                <h5 class="font-medium text-lg text-purple-600">Зона 1.5 метров (Вербальный контакт)</h5>
+                                <p class="text-sm text-gray-600">Гость входит в зону речи. Действие: Вербальное приветствие (с легким поклоном).</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Облачко-комикс -->
                     <div class="bubble-tip p-5 rounded-lg shadow-md my-6">
-                        <p class="font-semibold text-yellow-800">💡 Совет: Улыбка до глаз (*nun-useum*)</p>
+                        <p class="font-medium text-yellow-800">💡 Совет: Улыбка до глаз (nun-useum)</p>
                         <p class="text-yellow-700">Твоя улыбка должна быть искренней, как в корейской культуре — она должна быть видна в глазах. Поклон — жест глубокого уважения.</p>
                     </div>
 
-                    <h4 class="text-xl font-bold text-indigo-700 mt-8 mb-3">Рассадка и передача гостя</h4>
+                    <h4 class="text-xl font-medium text-indigo-700 mt-8 mb-3">Рассадка и передача гостя</h4>
                     
                     <!-- Улучшенный блок "Философия" -->
                     <div class="bubble-philosophy p-5 rounded-lg shadow-md mb-6">
-                        <p class="font-bold text-purple-800">📝 Философия: Меню подается в руки</p>
+                        <p class="font-medium text-purple-800">📝 Философия: Меню подается в руки</p>
                         <p class="text-purple-700 text-sm">Меню подается в руки гостю, а не кладется на стол. Это уважение и демонстрация чистоты.</p>
                     </div>
 
                     <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md text-red-700 mb-6 font-medium">
-                        <p class="font-extrabold text-red-800">⚠️ Запрет:</p>
+                        <p class="font-medium text-red-800">⚠️ Запрет:</p>
                         <p>Никогда не спрашивай: "Вы уже готовы сделать заказ?". Это создает давление. <br>
-                        **Лучше:** "Когда вам понадобится моя помощь с заказом, просто дайте мне знак."</p>
+                        Лучше: "Когда вам понадобится моя помощь с заказом, просто дайте мне знак."</p>
                     </div>
                 </div>
 
                 <!-- Вкладка 2: Прием заказа -->
                 <div id="tab-content-order" class="tab-content hidden">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">2. Прием заказа <span class="text-purple-500">| Искусство консультации</span></h3>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">2. Прием заказа <span class="text-purple-500">| Искусство консультации</span></h3>
                     <p class="text-gray-600 mb-6">Прием заказа — это не механическое записывание, а тонкое искусство консультации. Мы помогаем гостю выбрать идеальное сочетание.</p>
 
-                    <h4 class="text-xl font-bold text-indigo-700 mb-3">Правило "Ёлочки" (для напитков)</h4>
+                    <h4 class="text-xl font-medium text-indigo-700 mb-3">Правило "Ёлочки" (для напитков)</h4>
                     <p class="text-gray-600 mb-4">Направляем выбор гостя логично и мягко.</p>
 
                     <!-- Диаграмма "Воронка/Ёлочка" (Улучшенный дизайн) -->
                     <div class="my-6 p-6 bg-purple-50 rounded-xl border border-purple-200 shadow-inner flex flex-col items-center space-y-3">
-                        <div class="w-full max-w-sm bg-purple-100 text-purple-800 p-3 rounded-xl text-center font-bold shadow-md hover:scale-[1.03] transition">
+                        <div class="w-full max-w-sm bg-purple-100 text-purple-800 p-3 rounded-xl text-center font-medium shadow-md hover:scale-[1.03] transition">
                             1. Алкогольный или безалкогольный?
                         </div>
                         <div class="text-2xl text-purple-400">⬇️</div>
-                        <div class="w-full max-w-xs bg-purple-100 text-purple-800 p-3 rounded-xl text-center font-bold shadow-md hover:scale-[1.03] transition">
+                        <div class="w-full max-w-xs bg-purple-100 text-purple-800 p-3 rounded-xl text-center font-medium shadow-md hover:scale-[1.03] transition">
                             2. Холодный или горячий?
                         </div>
                         <div class="text-2xl text-purple-400">⬇️</div>
-                        <div class="w-full max-w-[16rem] bg-purple-100 text-purple-800 p-3 rounded-xl text-center font-bold shadow-md hover:scale-[1.03] transition">
+                        <div class="w-full max-w-[16rem] bg-purple-100 text-purple-800 p-3 rounded-xl text-center font-medium shadow-md hover:scale-[1.03] transition">
                             3. Более сладкий или менее сладкий?
                         </div>
                     </div>
 
                     <!-- Облачко-комикс -->
                     <div class="bubble-tip p-5 rounded-lg shadow-md my-6">
-                        <p class="font-bold text-yellow-800">🗣️ Правило конкретики</p>
+                        <p class="font-medium text-yellow-800">🗣️ Правило конкретики</p>
                         <p class="text-yellow-700">Никогда не жди, пока гость скажет "посоветуйте что-нибудь". <br>
-                        **Лучше:** "Если вы хотите что-то острое, я рекомендую...".</p>
+                        Лучше: "Если вы хотите что-то острое, я рекомендую...".</p>
                     </div>
 
-                    <h4 class="text-xl font-bold text-indigo-700 mt-8 mb-3">Алгоритм принятия заказа</h4>
+                    <h4 class="text-xl font-medium text-indigo-700 mt-8 mb-3">Алгоритм принятия заказа</h4>
                     <ul class="list-decimal list-inside space-y-3 text-gray-600 pl-4">
                         <li class="font-medium">
-                            **Повторить заказ:** Обязательно проговорить позиции вслух.
+                            Повторить заказ: Обязательно проговорить позиции вслух.
                             <span class="block text-sm text-gray-500 italic mt-1">"Итак, у вас: [назвать позиции]. Все верно?"</span>
                         </li>
                         <li class="font-medium">
-                            **Уточнить нюансы:** Убедиться в остроте/ингредиентах (особенно для корейской кухни).
+                            Уточнить нюансы: Убедиться в остроте/ингредиентах (особенно для корейской кухни).
                             <span class="block text-sm text-gray-500 italic mt-1">"Вы предпочитаете классическую остроту или сделать чуть мягче?"</span>
                         </li>
                         <li class="font-medium">
-                            **Сказать время:** Озвучить примерное время ожидания основных блюд.
+                            Сказать время: Озвучить примерное время ожидания основных блюд.
                             <span class="block text-sm text-gray-500 italic mt-1">"Время приготовления составит около 15 минут."</span>
                         </li>
                     </ul>
@@ -310,68 +314,68 @@
                 
                 <!-- Вкладка 3: Подача -->
                 <div id="tab-content-serve" class="tab-content hidden">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">3. Подача <span class="text-purple-500">| Чистота и Элегантность</span></h3>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">3. Подача <span class="text-purple-500">| Чистота и Элегантность</span></h3>
                     <p class="text-gray-600 mb-6">Подача — это наш шанс продемонстрировать гордость за продукт и ценность "Спокойствие и Уважение" через движения.</p>
 
                     <!-- Облачко-комикс -->
                     <div class="bubble-philosophy p-5 rounded-lg shadow-md mb-6">
-                        <p class="font-bold text-purple-800">🤫 Философия: Без шума</p>
+                        <p class="font-medium text-purple-800">🤫 Философия: Без шума</p>
                         <p class="text-purple-700 text-sm">Все движения должны быть тихими, плавными, без стука тарелок и суеты. Гость должен сосредоточиться на блюде.</p>
                     </div>
 
-                    <h4 class="text-xl font-bold text-indigo-700 mb-3">Ключевые моменты подачи</h4>
+                    <h4 class="text-xl font-medium text-indigo-700 mb-3">Ключевые моменты подачи</h4>
                     <ul class="list-decimal list-inside space-y-3 text-gray-600 pl-4 mb-6">
                         <li class="font-medium">
-                            **Проверка:** Блюдо соответствует заказу, нет подтеков, посуда чистая, температура верна.
+                            Проверка: Блюдо соответствует заказу, нет подтеков, посуда чистая, температура верна.
                         </li>
                         <li class="font-medium">
-                            **Подача:** Основные блюда подаются гостю *с правой* руки. Забираем посуду также *с правой*.
+                            Подача: Основные блюда подаются гостю с правой руки. Забираем посуду также с правой.
                         </li>
                         <li class="font-medium">
-                            **Назвать блюдо:** Всегда четко объявляйте, что подаете.
+                            Назвать блюдо: Всегда четко объявляйте, что подаете.
                             <span class="block text-sm text-gray-500 italic mt-1">"Ваш Кимчи-ччиге. Будьте осторожны, тарелка горячая."</span>
                         </li>
                         <li class="font-medium">
-                            **Контроль качества (2 минуты):** Проверяем, все ли в порядке, через 1-2 минуты после подачи.
+                            Контроль качества (2 минуты): Проверяем, все ли в порядке, через 1-2 минуты после подачи.
                             <span class="block text-sm text-gray-500 italic mt-1">"Вам все понравилось? Могу ли я что-то еще принести?" (Контакт глаз).</span>
                         </li>
                     </ul>
 
                     <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-md text-blue-700 font-medium">
-                        <p class="font-extrabold text-blue-800">💙 ПРАВИЛО: Чистые руки - чистый сервис</p>
+                        <p class="font-medium text-blue-800">💙 ПРАВИЛО: Чистые руки - чистый сервис</p>
                         <p>Никогда не касаться горлышка бокала или внутренней поверхности тарелки. Посуда держится за края.</p>
                     </div>
                 </div>
 
                 <!-- Вкладка 4: Расчет и Прощание -->
                 <div id="tab-content-pay" class="tab-content hidden">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">4. Расчет и Прощание <span class="text-purple-500">| Завершение цикла Любви</span></h3>
+                    <h3 class="text-2xl font-medium text-gray-800 mb-4">4. Расчет и Прощание <span class="text-purple-500">| Завершение цикла Любви</span></h3>
                     <p class="text-gray-600 mb-6">Последнее впечатление — самое важное. Мы благодарим за проведенное с нами время, завершая цикл "Любви".</p>
 
-                    <h4 class="text-xl font-bold text-indigo-700 mb-3">Алгоритм расчета</h4>
+                    <h4 class="text-xl font-medium text-indigo-700 mb-3">Алгоритм расчета</h4>
                     <p class="text-gray-600 mb-4">Ждем знака гостя (визуальный контакт, жест рукой). Инициатива всегда от гостя.</p>
 
                     <ul class="list-decimal list-inside space-y-3 text-gray-600 pl-4 mb-6">
                         <li class="font-medium">
-                            **Подача счета:** Приносим счет в чистой, аккуратной папке. Не стоим над гостем.
+                            Подача счета: Приносим счет в чистой, аккуратной папке. Не стоим над гостем.
                             <span class="block text-sm text-gray-500 italic mt-1">"Ваш счет. Я скоро подойду."</span>
                         </li>
                         <li class="font-medium">
-                            **Возврат:** Сдача и чек возвращаются гостю максимально быстро, с уважением.
+                            Возврат: Сдача и чек возвращаются гостю максимально быстро, с уважением.
                         </li>
                     </ul>
                     
                     <!-- Облачко-комикс -->
                     <div class="bubble-tip p-5 rounded-lg shadow-md my-6">
-                        <p class="font-bold text-yellow-800">👋 Искреннее прощание</p>
+                        <p class="font-medium text-yellow-800">👋 Искреннее прощание</p>
                         <p class="text-yellow-700">Прощание должно быть теплым и личным. "Спасибо, что были с нами. Ждем вас снова!"</p>
                     </div>
 
-                    <h4 class="text-xl font-bold text-indigo-700 mb-3">Уборка стола</h4>
-                    <p class="text-gray-600 mb-4">Убирать стол можно **только после того**, как гость ушел. Убирать посуду, пока гость сидит — недопустимо. Исключение: Гость сам попросил.</p>
+                    <h4 class="text-xl font-medium text-indigo-700 mb-3">Уборка стола</h4>
+                    <p class="text-gray-600 mb-4">Убирать стол можно только после того, как гость ушел. Убирать посуду, пока гость сидит — недопустимо. Исключение: Гость сам попросил.</p>
 
                     <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md text-red-700 font-medium">
-                        <p class="font-extrabold text-red-800">❌ ОШИБКА:</p>
+                        <p class="font-medium text-red-800">❌ ОШИБКА:</p>
                         <p>Начинать протирать стол или стул, когда гость еще не покинул ресторан.</p>
                     </div>
                 </div>
@@ -383,14 +387,14 @@
     <!-- Секция 4: Культура и Поведение -->
     <section id="culture" class="py-20" style="background-color: #F7F5FF;">
         <div class="container mx-auto max-w-4xl px-4">
-            <h2 class="text-4xl font-extrabold text-center mb-8" style="color: var(--color-primary);">Культура и Поведение</h2>
+            <h2 class="text-4xl font-semibold text-center mb-8" style="color: var(--color-primary);">Культура и Поведение</h2>
             
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">То, как мы ведём себя в зале, формирует атмосферу ЧИКО сильнее, чем любая музыка или интерьер. **Гость чувствует энергию команды, даже если не слышит слов.**</p>
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed italic">Когда в зале тишина, порядок и уважение — пространство наполняется спокойствием и доверием. Когда кто-то за спиной гостя обсуждает, раздражается или говорит громко — это сразу чувствуется. **Сотрудники ЧИКО — часть единой энергии ресторана.**</p>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">То, как мы ведём себя в зале, формирует атмосферу ЧИКО сильнее, чем любая музыка или интерьер. Гость чувствует энергию команды, даже если не слышит слов.</p>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed italic">Когда в зале тишина, порядок и уважение — пространство наполняется спокойствием и доверием. Когда кто-то за спиной гостя обсуждает, раздражается или говорит громко — это сразу чувствуется. Сотрудники ЧИКО — часть единой энергии ресторана.</p>
 
             <!-- Философия ЧИКО -->
             <div class="bubble-philosophy p-6 rounded-2xl shadow-xl mb-8">
-                <h3 class="font-bold text-2xl mb-3 flex items-center" style="color: var(--color-primary);"><span class="text-4xl mr-3">🕊️</span> Внутренний Настрой</h3>
+                <h3 class="font-semibold text-2xl mb-3 flex items-center" style="color: var(--color-primary);"><span class="text-4xl mr-3">🕊️</span> Внутренний Настрой</h3>
                 <p class="text-purple-700 italic text-lg mb-3">«Сегодня я сделаю чей-то день добрее.»</p>
                 <p class="text-purple-700 text-sm">Сотрудник ЧИКО - это лицо бренда, создающее атмосферу. Когда команда спокойна, зал звучит гармонично. </p>
             </div>
@@ -399,7 +403,7 @@
                 
                 <!-- Блок ЗАПРЕЩЕНО -->
                 <div class="p-6 rounded-2xl shadow-xl forbidden-list transform hover:translate-y-[-2px] transition-transform duration-300">
-                    <h3 class="font-extrabold text-2xl mb-4 flex items-center text-red-700"><span class="text-3xl mr-3">⛔</span> СТРОГО ЗАПРЕЩЕНО</h3>
+                    <h3 class="font-semibold text-2xl mb-4 flex items-center text-red-700"><span class="text-3xl mr-3">⛔</span> СТРОГО ЗАПРЕЩЕНО</h3>
                     <ul class="list-disc list-inside space-y-3 text-red-800 font-medium ml-4">
                         <li>Обсуждать гостей или коллег в зале.</li>
                         <li>Пользоваться телефоном в зоне обслуживания.</li>
@@ -412,7 +416,7 @@
 
                 <!-- Блок ОБЯЗАТЕЛЬНО -->
                 <div class="p-6 rounded-2xl shadow-xl mandatory-list transform hover:translate-y-[-2px] transition-transform duration-300">
-                    <h3 class="font-extrabold text-2xl mb-4 flex items-center text-green-700"><span class="text-3xl mr-3">⭐</span> К ИСПОЛНЕНИЮ (ОБЯЗАТЕЛЬНО)</h3>
+                    <h3 class="font-semibold text-2xl mb-4 flex items-center text-green-700"><span class="text-3xl mr-3">⭐</span> К ИСПОЛНЕНИЮ (ОБЯЗАТЕЛЬНО)</h3>
                     <ul class="list-disc list-inside space-y-3 text-green-800 font-medium ml-4">
                         <li>Поддерживать идеальную чистоту и порядок.</li>
                         <li>Демонстрировать спокойствие и уважение.</li>
@@ -429,28 +433,28 @@
     <!-- Секция 5: Заключение -->
     <section id="conclusion" class="py-16" style="background-color: var(--color-primary);">
         <div class="container mx-auto max-w-4xl px-4 text-center text-white">
-            <h2 class="text-4xl font-extrabold mb-8 border-b-2 border-white/50 pb-3">Три Опоры Сервиса ЧИКО</h2>
+            <h2 class="text-4xl font-semibold mb-8 border-b-2 border-white/50 pb-3">Три Опоры Сервиса ЧИКО</h2>
             <p class="text-xl mb-10 opacity-95">Вся наша философия сводится к этим трем ключевым принципам:</p>
             
             <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
                 <div class="p-8 bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl flex-1 border border-white/20 transform hover:scale-105 transition-transform duration-300">
                     <span class="text-5xl mb-3 block" style="color: var(--color-accent);">💖</span>
-                    <h3 class="text-2xl font-bold mb-2">1. Любовь</h3>
+                    <h3 class="text-2xl font-medium mb-2">1. Любовь</h3>
                     <p class="text-sm opacity-90">Забота о госте, как о себе. Искренняя улыбка, идущая от сердца.</p>
                 </div>
                 <div class="p-8 bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl flex-1 border border-white/20 transform hover:scale-105 transition-transform duration-300">
                     <span class="text-5xl mb-3 block text-white">🤝</span>
-                    <h3 class="text-2xl font-bold mb-2">2. Уважение</h3>
+                    <h3 class="text-2xl font-medium mb-2">2. Уважение</h3>
                     <p class="text-sm opacity-90">Уважение к гостю, коллегам и к процессу. Через тихие, плавные движения.</p>
                 </div>
                 <div class="p-8 bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl flex-1 border border-white/20 transform hover:scale-105 transition-transform duration-300">
                     <span class="text-5xl mb-3 block" style="color: #60A5FA;">✨</span>
-                    <h3 class="text-2xl font-bold mb-2">3. Спокойствие</h3>
+                    <h3 class="text-2xl font-medium mb-2">3. Спокойствие</h3>
                     <p class="text-sm opacity-90">Контроль над собой и пространством. Внутренний настрой, создающий гармонию.</p>
                 </div>
             </div>
 
-            <p class="mt-12 text-2xl font-extrabold italic" style="color: var(--color-accent);">Спасибо, что ты в нашей команде!</p>
+            <p class="mt-12 text-2xl font-medium italic" style="color: var(--color-accent);">Спасибо, что ты в нашей команде!</p>
         </div>
     </section>
 
